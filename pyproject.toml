@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sam-3d-body"
+version = "0.0.1"
+description = "Packaging wrapper for Meta's SAM 3D Body repo."
+readme = "README.md"
+requires-python = ">=3.10"
+
+# IMPORTANT: keep their license
+license = { file = "LICENSE" }
+
+authors = [
+  { name = "Meta Platforms, Inc. and affiliates" }
+]
+
+dependencies = [
+  "numpy",
+  "opencv-python",
+  "tqdm",
+  "PyYAML",
+  "matplotlib",
+  "scipy",
+  "pandas",
+  "fvcore",
+  "iopath",
+  # you still install torch + detectron2 manually as per INSTALL.md
+]
+
+[project.urls]
+homepage = "https://github.com/annadeichler/sam-3d-body"
+repository = "https://github.com/annadeichler/sam-3d-body"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sam_3d_body", "tools", "notebook"]
